@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MWB</title>
+   
+    <link href="./atm.css" rel="stylesheet"/>
+    
+
+</head>
+<body>
+   
+    <main>
+        <div class="title">
+            <span class="material-symbols-outlined"></span>
+            <h1 id="saludo"></h1>
+            
+        </div>
+        <section id="container">
+            <div class="withdraw">
+                <ul>
+                    <li><button id="retiro" class="retiros">Retirar dinero</button></li>
+                    <li><button id="saldo">Consultar Saldo</button></li>
+                    <li><button id="movimientos">Consultar Movimientos</button></li>
+                    <li><button id="change">Change</button></li>
+                </ul>
+            </div>
+            <div class="deposit">
+                <ul>
+                    <li><button id="deposito" class="depositos">Depositar</button></li>
+                    <li><button id="salir">Salir</button></li>
+                    <li><button id="imprimir">Imprimir recibo</button></li>
+                    <li><button id="transferencias">Realizar Transferencias</button></li>
+                </ul>
+
+            </div>
+
+            <div id="modal" class="hidden">
+                <span>x</span>
+                <h5>Modal</h5>
+                <div>
+                  
+                </div>
+            </div>
+
+            <div id="backdrop" class="hidden"></div>
+
+
+
+        </section>
+
+    </main>
+    <script src="./atm.js" defer type="module"></script>
+</body>
+</html>

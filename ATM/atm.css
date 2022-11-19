@@ -1,0 +1,176 @@
+@import url(./fonts/fonts.css);
+@import url(./reset.css);
+
+:root{
+    font-family: 'Anton', sans-serif;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: url(./images/17973908.jpg) no-repeat center center;
+    background-size: cover;
+    font-family: 'Anton', sans-serif;
+   
+ 
+    
+}
+
+
+main{
+
+    background-color: aqua;
+    width: 80%;
+}
+
+.material-symbols-outlined{
+    content: url(./assets/person_FILL1_wght700_GRAD200_opsz48.png);
+    width: 35px;
+}
+.title{
+    display: flex;
+    justify-content: flex-end;
+}
+
+h1 {
+    color:#004883;
+    font-size: 30px;
+}
+
+section{
+    width: 100%;
+}
+
+.withdraw ul, .deposit ul{
+
+    display: flex;
+    justify-content: left;
+    font-size: 1.8rem;
+    
+}
+
+.retiros, .depositos{
+    background-color: #004883;
+
+}
+
+.retiros{
+    border-top-left-radius: 99PX;
+}
+.iconoRetirar{
+    width: 50px;
+    height: 50;
+}
+.depositos{
+    border-bottom-left-radius: 99px;
+}
+.iconoDepositar{
+    width: 50px;
+    height: 50; 
+}
+button{
+    background-color: black;
+    width: 250PX;
+    height: 150px;
+    cursor: pointer;
+
+  
+}
+button:hover{
+    transition: 900ms;
+    font-weight: 600;
+    background: #004883;
+    transform: scale(1.1);
+    filter: brightness(1.1);
+}
+
+#modal {
+    position: fixed;
+    min-width: 500px;
+    min-height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    z-index: 100;
+    color: black;
+    text-align: center;
+   
+    
+  }
+
+  #modal div {  
+    display: flex;
+    flex-direction: column;  
+    
+  }
+  
+  #modal h5 {
+    margin-bottom: 30px;
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 900;  
+  }
+  
+  #modal span {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+  
+    width: 30px;
+    height: 30px;
+    border-radius: 999px;
+    background-color: #fbd301;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    color: white;
+  
+  
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  
+  
+  #modal span:hover {
+    filter: brightness(1.1);
+  }
+  
+  #modal span:active {
+    filter: brightness(0.9);
+  }
+  
+  #modal::backdrop {
+    background-color: rgba(0, 0, 0, 0.5);
+    
+  }
+  .active {
+    display: block !important;
+  }
+  
+  
+#backdrop{
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    background-color: rgba(0, 0, 0, 0.5);
+  
+    z-index: 99;
+  
+  }
+
+  .hidden {
+    visibility: hidden;
+    
+}
+  
+
+
+

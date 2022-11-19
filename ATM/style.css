@@ -1,0 +1,118 @@
+@import url(./reset.css);
+@import url(./fonts/fonts.css);
+
+:root{
+    font-family: 'Anton', sans-serif;
+}
+body{
+    display: flex;
+    flex-direction: column;
+    font-family: 'Anton', sans-serif;
+
+}
+
+header{
+    background-color:#004883;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+}
+.metaBank{
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+.logo{
+    content: url(./assets/banklogo.png);
+    border-radius: 999px;
+    width: 120px;
+    height: 120px;
+}
+h1{
+    font-size: 2.1rem;
+    font-weight: bolder;
+    color: white;
+    margin-left: 20px;
+}
+ul{
+    background-color: blue;
+    display: flex;
+    justify-content: space-around;
+    width: 500px;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    color: aliceblue;
+}
+/*---------------------------------*/
+main{
+    position: relative;
+    background: url(./images/17973908.jpg) no-repeat center center;
+    background-size: cover;
+}
+.userCredential{
+    background-color: #f3f3f3;
+    border: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300PX;
+    width: 300px;
+    border-radius: 33px;
+    padding-top: 20px;
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-bottom: 50px;
+    opacity: 0.8;
+}
+.userCredential:hover{
+    transform:scale(1.1);
+    transition: 1.2s;
+}
+
+p{
+    color: black;
+    font-size: 1.5rem;
+
+    width: 250px;
+    margin-left: 0;
+    margin: 10px;
+    font-weight: bolder;
+}
+
+input{
+    background-color: white;
+    color: black;
+    border-radius: 17px;
+    width: 250px;
+    height: 30px;
+    border: 20px;
+
+}
+.forget{
+    color: #004883;
+    margin-top: 18px;
+
+}
+
+button{
+    color: black;
+    font-size: 1.2rem;
+    margin-top: 20px;
+    border-radius: 10px;
+    font-weight: bolder;
+    background-color: #004883;
+    width: 100px;
+    height: 30px;
+}
+
+.error {
+    font-weight: 700;
+    color: rebeccapurple;
+
+    font-size: 19px;
+
+}
+.hidden {
+    visibility: hidden;
+    
+}
