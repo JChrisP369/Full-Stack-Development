@@ -98,8 +98,7 @@ retirarDeposito.addEventListener('click', () => {
         
         }else{
             window.sessionStorage.setItem('currentUser', JSON.stringify(updateCurrentUserRetira));
-            nuevoRetiro = " ";
-           
+
         } 
         
     })
