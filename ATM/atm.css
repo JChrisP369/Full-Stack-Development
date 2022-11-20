@@ -25,6 +25,10 @@ main{
     width: 80%;
 }
 
+#container{
+  z-index: 10;
+}
+
 .material-symbols-outlined{
     content: url(./assets/person_FILL1_wght700_GRAD200_opsz48.png);
     width: 35px;
@@ -109,13 +113,7 @@ button:hover{
     flex-direction: column;  
     
   }
-  
-  #modal h5 {
-    margin-bottom: 30px;
-    margin: 0;
-    font-size: 2rem;
-    font-weight: 900;  
-  }
+ 
   
   #modal span {
     position: absolute;
@@ -158,9 +156,10 @@ button:hover{
   
 #backdrop{
     position: absolute;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.5);
+   
   
     z-index: 99;
   
@@ -170,6 +169,23 @@ button:hover{
     visibility: hidden;
     
 }
+
+.titleDeposit{
+  font-size: 1.5rem;
+}
+#nuevoDeposito{
+  width: 200px;
+
+}
+#depositarDinero{
+  height: 30px;
+  width: 100px;
+  background-color: #004883;
+  color: white;
+  border-radius: 99px;
+}
+
+
   
 
 

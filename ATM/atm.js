@@ -45,8 +45,9 @@ ejecutarDeposito.addEventListener('click', () => {
     abrirModal();
     const depositoModal = document.querySelector('#modal div');
     depositoModal.innerHTML = 
-    `<input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
-    <button id='depositarDinero' class=''>Depositar</button>
+    `<h2 class = "titleDeposit">Depositar</h2>
+    <input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
+    <button id='depositarDinero'>Depositar</button>
     <laber>El valor depositado es:</label><h5 id = 'valorDepositdo'></h5>
     <label>El saldo actual es:</label><h5 id='saldoIncremento'></h5>`
 
