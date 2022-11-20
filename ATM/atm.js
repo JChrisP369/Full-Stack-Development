@@ -7,6 +7,7 @@ const ejecutarDeposito = document.querySelector('#deposito')
 const consultaSaldo = document.querySelector('#saldo');
 const retirarDeposito = document.querySelector('#retiro');
 const saldoIncremento = document.querySelector('#saldoIncremento')
+const salir = document.querySelector('#salir')
 
 
 const abrirModal = () => {
@@ -17,6 +18,10 @@ const abrirModal = () => {
 const cerrarModal = () => {
     modal.classList.add('hidden')
     backdrop.classList.add('hidden')
+}
+
+const getOutProfile = () => {
+    window.location.href = './index.html'
 }
 
 document.addEventListener('DOMContentLoaded', function(){
@@ -109,4 +114,8 @@ closeButtonModal.addEventListener('click', () => {cerrarModal()
 });
 
 backdrop.addEventListener('click', () => { cerrarModal()
+});
+
+salir.addEventListener('click', () =>{ getOutProfile ()
+
 });
