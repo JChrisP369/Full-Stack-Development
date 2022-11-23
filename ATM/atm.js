@@ -38,7 +38,11 @@ consultaSaldo.addEventListener('click', () => {
 
     //Pasar datos necesarios
     const {saldo} = JSON.parse(window.sessionStorage.getItem('currentUser')); //destructuración - comparar línea #9
-    currentBalance.innerHTML = `Tu saldo actual es $ ${saldo}`
+    currentBalance.innerHTML = `Tu saldo actual es  <h3>$${saldo}</h3>
+                  <ul>
+                    <li>Capacidad máxima del cajero 990coins</li>
+                    <li>No puede tener menos de 10 coins en la cuenta</li>
+                  </ul>`
     
 
 });
