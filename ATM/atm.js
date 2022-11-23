@@ -55,8 +55,10 @@ ejecutarDeposito.addEventListener('click', () => {
     `<h2 class = "titleDeposit">Depositar</h2>
     <input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
     <button id='depositarDinero'>Depositar</button>
-    <laber>El valor depositado es:</label><h5 id = 'valorDeposito'></h5>
-    <label>El saldo actual es:</label><h5 id='saldoIncremento'></h5>`
+    <label>El valor depositado es:</label><h5 id = 'valorDeposito'></h5>
+    <label>El saldo actual es:</label><h5 id='saldoIncremento'></h5>
+    <h5 class = 'msgAlertDeposit'></h5>`
+    
 
     
     
@@ -67,6 +69,7 @@ ejecutarDeposito.addEventListener('click', () => {
     const submitDeposito = document.querySelector('#depositarDinero');
     const saldoIncremento = document.querySelector('#saldoIncremento');
     const valorDeposito = document.querySelector('#valorDeposito');
+    const msgAlertDeposit = document.querySelector('.msgAlertDeposit');
     
     submitDeposito.addEventListener('click', () => {
         
@@ -75,10 +78,16 @@ ejecutarDeposito.addEventListener('click', () => {
             saldo: saldoActual + Number(nuevoDeposito.value),
     
         }
-        window.sessionStorage.setItem('currentUser', JSON.stringify(updateCurrentUserDeposit))
-        valorDeposito.innerHTML = (updateCurrentUserDeposit.saldo - saldoActual);
-        saldoIncremento.innerHTML = updateCurrentUserDeposit.saldo;
+        if(updateCurrentUserDeposit.saldo > 990){
+            msgAlertDeposit.innerHTML = 'El cajero tiene capacidad solo para 990 coins'
+
+        }else {
             
+            window.sessionStorage.setItem('currentUser', JSON.stringify(updateCurrentUserDeposit))
+            valorDeposito.innerHTML = (updateCurrentUserDeposit.saldo - saldoActual);
+            saldoIncremento.innerHTML = updateCurrentUserDeposit.saldo;
+                
+        }
         
 
     });
@@ -92,11 +101,17 @@ retirarDeposito.addEventListener('click', () => {
     const retirarModal = document.querySelector('#modal div');
     retirarModal.innerHTML = 
 
-    `<input id='nuevoRetiro' placeholder = 'Ingresar Monto a retirar' type='number'></input>
+    `<h2 class = "titleRetiro">Retirar</h2>
+    <input id='nuevoRetiro' placeholder = 'Ingresar Monto a retirar' type='number'></input>
     <button id='retirarDinero' class=''>Retirar</button>
-    <h5 class = "msgAlert"><h5/>   
+    <h5 class = "msgAlert"><h5/>
+    <div id= 'infoRetiro'>   
     <laber>El valor retirado es:</label><h5 id = 'valorRetirado'></h5>
-    <label>El saldo actual es:</label><h5 id= 'saldoEjecutado'></h5>`
+    </div>
+    <div id = 'infoSaldo'>
+    <label>El saldo actual es:</label><h5 id= 'saldoEjecutado'>${saldoActual}</h5>
+    </div>`
+   
     
 
     const currentUser = JSON.parse(window.sessionStorage.getItem('currentUser'));
@@ -122,6 +137,8 @@ retirarDeposito.addEventListener('click', () => {
         
     })
 });
+
+//Procedimiento consulta de movimientos
 
 closeButtonModal.addEventListener('click', () => {cerrarModal()
 });

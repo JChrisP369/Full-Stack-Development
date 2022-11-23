@@ -4,7 +4,7 @@ const usuarioBD = [
         email: 'jcruz@gmail.com',
         cuenta: 1,
         password: '12345',
-        saldo: 10000,
+        saldo: 989,
         log:[]
     },
     {
@@ -12,7 +12,7 @@ const usuarioBD = [
         email: 'ccruz@gmail.com',
         cuenta: 2,
         password: '123456',
-        saldo: 20000,
+        saldo: 11,
         log:[]
     },
     {
@@ -20,7 +20,7 @@ const usuarioBD = [
         email: 'pcruz@gmail.com',
         cuenta: 3,
         password: '1234567',
-        saldo: 30000,
+        saldo: 600,
         log:[{
             fecha: new Date(),
             monto: 100,

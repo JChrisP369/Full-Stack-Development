@@ -170,14 +170,16 @@ button:hover{
     
 }
 
-.titleDeposit{
+.titleDeposit, .titleRetiro{
   font-size: 1.5rem;
 }
-#nuevoDeposito{
+#nuevoDeposito, #nuevoRetiro{
   width: 200px;
 
 }
-#depositarDinero{
+
+
+#depositarDinero, #retirarDinero{
   height: 30px;
   width: 100px;
   background-color: #004883;
