@@ -55,8 +55,8 @@ ejecutarDeposito.addEventListener('click', () => {
     `<h2 class = "titleDeposit">Depositar</h2>
     <input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
     <button id='depositarDinero'>Depositar</button>
-    <laber>El valor depositado es:</label><h5 id = 'valorDepositdo'></h5>
-    <label>El saldo actual es:</label><h5 id='saldoIncremento'>${saldo}</h5>`
+    <laber>El valor depositado es:</label><h5 id = 'valorDeposito'></h5>
+    <label>El saldo actual es:</label><h5 id='saldoIncremento'></h5>`
 
     
     
@@ -65,15 +65,26 @@ ejecutarDeposito.addEventListener('click', () => {
     const saldoActual = Number(currentUser.saldo)
     const nuevoDeposito = document.querySelector('#nuevoDeposito');
     const submitDeposito = document.querySelector('#depositarDinero');
+    const saldoIncremento = document.querySelector('#saldoIncremento');
+    const valorDeposito = document.querySelector('#valorDeposito');
     
     submitDeposito.addEventListener('click', () => {
+        
         const updateCurrentUserDeposit = {
             ...currentUser,
             saldo: saldoActual + Number(nuevoDeposito.value),
+    
         }
         window.sessionStorage.setItem('currentUser', JSON.stringify(updateCurrentUserDeposit))
+        valorDeposito.innerHTML = (updateCurrentUserDeposit.saldo - saldoActual);
+        saldoIncremento.innerHTML = updateCurrentUserDeposit.saldo;
+            
+        
 
     });
+    
+    
+    
 });
 ///Procedimiento de retiro de dinero
 retirarDeposito.addEventListener('click', () => {
