@@ -1,13 +1,14 @@
 const saludo = document.querySelector('#saludo');
 const modal = document.querySelector('#modal');
-const backdrop = document.querySelector('#backdrop')
-const closeButtonModal = document.querySelector('#modal span')
-const currentBalance = document.querySelector('#modal div')
-const ejecutarDeposito = document.querySelector('#deposito')
+const backdrop = document.querySelector('#backdrop');
+const closeButtonModal = document.querySelector('#modal span');
+const currentBalance = document.querySelector('#modal div');
+const ejecutarDeposito = document.querySelector('#deposito');
 const consultaSaldo = document.querySelector('#saldo');
 const retirarDeposito = document.querySelector('#retiro');
-const saldoIncremento = document.querySelector('#saldoIncremento')
-const salir = document.querySelector('#salir')
+const saldoIncremento = document.querySelector('#saldoIncremento');
+const salir = document.querySelector('#salir');
+const depositoModal = document.querySelector('#modal div');
 
 
 const abrirModal = () => {
@@ -48,15 +49,16 @@ consultaSaldo.addEventListener('click', () => {
 
 ejecutarDeposito.addEventListener('click', () => {
     abrirModal();
-    const depositoModal = document.querySelector('#modal div');
+    
+    const {saldo} = JSON.parse(window.sessionStorage.getItem('currentUser'));
     depositoModal.innerHTML = 
     `<h2 class = "titleDeposit">Depositar</h2>
     <input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
     <button id='depositarDinero'>Depositar</button>
     <laber>El valor depositado es:</label><h5 id = 'valorDepositdo'></h5>
-    <label>El saldo actual es:</label><h5 id='saldoIncremento'></h5>`
+    <label>El saldo actual es:</label><h5 id='saldoIncremento'>${saldo}</h5>`
 
-    const {saldo} = JSON.parse(window.sessionStorage.getItem('currentUser'));
+    
     
 
     const currentUser = JSON.parse(window.sessionStorage.getItem('currentUser'))
