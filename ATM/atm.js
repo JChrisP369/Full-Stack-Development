@@ -10,7 +10,7 @@ const saldoIncremento = document.querySelector('#saldoIncremento');
 const salir = document.querySelector('#salir');
 const depositoModal = document.querySelector('#modal div');
 const movimientos = document.querySelector('#movimientos');
-
+const transferencia = document.querySelector('#transferencias')
 
 const abrirModal = () => {
     modal.classList.remove('hidden');
@@ -144,9 +144,27 @@ retirarDeposito.addEventListener('click', () => {
 
 movimientos.addEventListener('click', () => {
     abrirModal();
+    const queryMovimiento = document.querySelector('#modal div')
+    queryMovimiento.innerHTML = `<h1>Registro de movimientos</h1> 
+    <div id = 'infoFecha'></div>
+    <div id = 'infoUsuario'></div>
+    <div id = 'infoTipoMovimiento'></div>`
+
 
 })
 
+//Procedimiento transferencia bancaría 
+
+transferencia.addEventListener('click', () => {
+    abrirModal();
+    const transferir = document.querySelector('#modal div');
+    transferir.innerHTML = `<h1>Transferencia</h1>
+    <input id = 'montoTransferencia' placeholder = 'Ingrese valor' type = 'number'></input>
+    <label class = 'valorTransferido'>El valor transferidó</label>
+    <laber class = 'saldoActual'>Su saldo actual es:</label>`
+    
+
+})
 
 
 closeButtonModal.addEventListener('click', () => {cerrarModal()

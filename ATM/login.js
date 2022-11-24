@@ -27,6 +27,14 @@ const usuarioBD = [
             type: "deposito"
         }
         ]
+    },
+    {
+        nombre: 'Diana Ortiz',
+        email: 'DianaOrtiz07@gmail.com',
+        cuenta: 4,
+        password: '12345',
+        saldo: 500,
+
     }
 ]
 

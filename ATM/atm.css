@@ -13,6 +13,7 @@ body{
     background: url(./images/17973908.jpg) no-repeat center center;
     background-size: cover;
     font-family: 'Anton', sans-serif;
+    overflow: hidden;
    
  
     
@@ -21,7 +22,6 @@ body{
 
 main{
 
-    background-color: aqua;
     width: 80%;
 }
 
@@ -36,6 +36,7 @@ main{
 .title{
     display: flex;
     justify-content: flex-end;
+    margin-bottom: 100px;
 }
 
 h1 {
