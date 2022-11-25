@@ -160,8 +160,28 @@ transferencia.addEventListener('click', () => {
     const transferir = document.querySelector('#modal div');
     transferir.innerHTML = `<h1>Transferencia</h1>
     <input id = 'montoTransferencia' placeholder = 'Ingrese valor' type = 'number'></input>
+    <input id = 'inNumeroCuenta' placeholder = 'Ingrese número de cuenta' type = 'number'></input>
+    <button id = 'transferir'>Transferir</button>
     <label class = 'valorTransferido'>El valor transferidó</label>
-    <laber class = 'saldoActual'>Su saldo actual es:</label>`
+    <laber class = 'saldoActual'>Su saldo actual es:</label>
+    <h5 class = 'msgUsuarioFinal'></h5>`
+
+    const currentUser = JSON.parse(window.sessionStorage.getItem('currentUser'))
+    const inNumeroCuenta = document.querySelector('#inNumeroCuenta');
+    const msgUsuarioFinal = document.querySelector('#msgUsuarioFinal');
+    const saldoActualTransf = Number(currentUser.saldo)
+    const nuevaTransferencia = document.querySelector('#montoTransferencia')
+
+    const updateCurrentUserTransf ={
+        ...currentUser,
+        saldo: saldoActualTransf + Number(nuevaTransferencia.value)
+    }
+    if(currentUser.cuenta === inNumeroCuenta.value ){
+        window.localStorage.setItem('currentUser', JSON.stringify(updateCurrentUserTransf))
+        msgUsuarioFinal.innerHTML = `Usted realizo una tranferencia a ${nombre}`;
+
+
+    }
     
 
 })
