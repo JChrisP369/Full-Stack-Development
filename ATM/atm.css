@@ -137,7 +137,7 @@ button:hover{
     width: 30px;
     height: 30px;
     border-radius: 999px;
-    background-color: #fbd301;
+    background-color: rgba(3, 47, 241, 0.2);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -189,33 +189,37 @@ button:hover{
   font-weight: bold;
   color: #004883;
 }
-#nuevoDeposito, #nuevoRetiro{
-  width: 200px;
+#nuevoDeposito, #nuevoRetiro, #montoTransferencia, #inNumeroCuenta{
+  width: 250px;
   margin-top: 30px;
-  margin-left: 130px;
+  margin-left: 110px;
   border: 2px solid #004883;
   text-align: center;
   border-radius: 10px;
 
 }
-#depositarDinero, #retirarDinero{
+#depositarDinero, #retirarDinero, #transferir{
   height: 50px;
   width: 110px;
   background-color: #004883;
   color: white;
   border-radius: 99px;
   font-size: 1.3rem;
-  margin-left: 180px;
+  margin-left: 175px;
   margin-top: 22px;
 
 }
-.infoDepositarSaldo{
+#infoValorDepositado, #infoSaldoIncremento, #infoValorRetirado, #infoSaldoEjecutado, #infoValorTransferido, #infoSaldoActual{
   display: flex;
-  flex-direction: row;
-  text-align: center;
+  flex-direction: row !important;
+  margin-top: 20px;
 }
-.labelValor, .labelValorActual, #valorDeposito, #saldoIncremento {
+.labelValor, .labelSaldoActual {
   font-size: 1.2rem;
+}
+#valorDeposito, #saldoIncremento, #valorRetirado, #saldoEjecutado{
+  font-size: 1.2rem;
+  color: #004883;
 }
 
 #infoRetiro{

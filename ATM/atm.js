@@ -61,8 +61,10 @@ ejecutarDeposito.addEventListener('click', () => {
     <input id='nuevoDeposito' placeholder = 'Ingresar Monto' type='number'></input>
     <button id='depositarDinero'>Depositar</button>
 
-    <div class = 'infoDepositarSaldo'>
-    <label class = 'labelValor'>El valor depositado es:</label><h5 id = 'valorDeposito'></h5>
+    <div id = 'infoValorDepositado'>
+    <label class = 'labelValor'>El valor depositado es:</label> <h5 id = 'valorDeposito'></h5>
+    </div>
+    <div id = 'infoSaldoIncremento'>
     <label class = 'labelSaldoActual'>El saldo actual es:</label><h5 id='saldoIncremento'></h5>
     </div>
     <h5 class = 'msgAlertDeposit'></h5>`
@@ -107,11 +109,11 @@ retirarDeposito.addEventListener('click', () => {
     `<h2 class = "titleRetiro">Retirar</h2>
     <input id='nuevoRetiro' placeholder = 'Ingresar Monto a retirar' type='number'></input>
     <button id='retirarDinero' class=''>Retirar</button>
-    <div id= 'infoRetiro'>   
-    <laber>El valor retirado es:</label><h5 id = 'valorRetirado'></h5>
+    <div id= 'infoValorRetirado'>   
+    <label class = 'labelValor'>El valor retirado es:</label><h5 id = 'valorRetirado'></h5>
     </div>
-    <div id = 'infoSaldo'>
-    <label>El saldo actual es:</label><h5 id= 'saldoEjecutado'></h5>
+    <div id = 'infoSaldoEjecutado'>
+    <label class = 'labelSaldoActual'>El saldo actual es:</label><h5 id= 'saldoEjecutado'></h5>
     </div>
     <h5 class = "msgAlert"><h5/>`
    
@@ -121,6 +123,7 @@ retirarDeposito.addEventListener('click', () => {
     const submitRetiro = document.querySelector('#retirarDinero');
     const msgAlert = document.querySelector('.msgAlert');
     const valorRetiro = document.querySelector('#valorRetirado')
+    const saldoEjecutado = document.querySelector('#saldoEjecutado')
 
     submitRetiro.addEventListener('click', () => {
 
@@ -134,7 +137,8 @@ retirarDeposito.addEventListener('click', () => {
         
         }else{
             window.sessionStorage.setItem('currentUser', JSON.stringify(updateCurrentUserRetira));
-            valorRetiro.innerHTML = (saldoActual -updateCurrentUserRetira.saldo);
+            valorRetiro.innerHTML = (saldoActual- updateCurrentUserRetira.saldo);
+            saldoEjecutado.innerHTML = updateCurrentUserRetira.saldo
         } 
         
     })
@@ -157,30 +161,36 @@ movimientos.addEventListener('click', () => {
 
 transferencia.addEventListener('click', () => {
     abrirModal();
+    const{cuenta} = JSON.parse(window.sessionStorage.getItem('currentUser'))
     const transferir = document.querySelector('#modal div');
     transferir.innerHTML = `<h1>Transferencia</h1>
     <input id = 'montoTransferencia' placeholder = 'Ingrese valor' type = 'number'></input>
-    <input id = 'inNumeroCuenta' placeholder = 'Ingrese número de cuenta' type = 'number'></input>
+    <input id = 'inNumeroCuenta' placeholder = 'Número de cuenta' type = 'number'></input>
     <button id = 'transferir'>Transferir</button>
-    <label class = 'valorTransferido'>El valor transferidó</label>
-    <laber class = 'saldoActual'>Su saldo actual es:</label>
+    <div id = 'infoValorTransferido'>
+    <label class = 'labelValorTransferido'>El valor transferido es:</label><h5 id = 'valorTransferido'></h5>
+    </div>
+    <div id = 'infoSaldoActual'>
+    <laber class = 'laberValorT'>Su saldo actual es:</label><h5 id = 'saldoTransferido'></h5>
+    </div>
     <h5 class = 'msgUsuarioFinal'></h5>`
-
+    
     const currentUser = JSON.parse(window.sessionStorage.getItem('currentUser'))
     const inNumeroCuenta = document.querySelector('#inNumeroCuenta');
-    const msgUsuarioFinal = document.querySelector('#msgUsuarioFinal');
+    const msgUsuarioFinal = document.querySelector('.msgUsuarioFinal');
     const saldoActualTransf = Number(currentUser.saldo)
     const nuevaTransferencia = document.querySelector('#montoTransferencia')
 
-    const updateCurrentUserTransf ={
+    const updateCurrentUserTransf = {
         ...currentUser,
         saldo: saldoActualTransf + Number(nuevaTransferencia.value)
     }
-    if(currentUser.cuenta === inNumeroCuenta.value ){
+    if(Number(currentUser.cuenta) === inNumeroCuenta.value ){
         window.localStorage.setItem('currentUser', JSON.stringify(updateCurrentUserTransf))
-        msgUsuarioFinal.innerHTML = `Usted realizo una tranferencia a ${nombre}`;
-
-
+        msgUsuarioFinal.innerHTML = `Usted realizo una tranferencia a ${currentUser.nombre}`;
+    }
+    else {
+        msgUsuarioFinal.innerHTML = `No se encuentra el número de cuenta`
     }
     
 
