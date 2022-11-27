@@ -107,7 +107,7 @@ retirarDeposito.addEventListener('click', () => {
     retirarModal.innerHTML = 
 
     `<h2 class = "titleRetiro">Retirar</h2>
-    <input id='nuevoRetiro' placeholder = 'Ingresar Monto a retirar' type='number'></input>
+    <input id='nuevoRetiro' placeholder = 'Ingresar Monto' type='number'></input>
     <button id='retirarDinero' class=''>Retirar</button>
     <div id= 'infoValorRetirado'>   
     <label class = 'labelValor'>El valor retirado es:</label><h5 id = 'valorRetirado'></h5>
@@ -171,7 +171,7 @@ transferencia.addEventListener('click', () => {
     <label class = 'labelValorTransferido'>El valor transferido es:</label><h5 id = 'valorTransferido'></h5>
     </div>
     <div id = 'infoSaldoActual'>
-    <laber class = 'laberValorT'>Su saldo actual es:</label><h5 id = 'saldoTransferido'></h5>
+    <laber class = 'labelValorT'>Su saldo actual es:</label><h5 id = 'saldoTransferido'></h5>
     </div>
     <h5 class = 'msgUsuarioFinal'></h5>`
     
@@ -185,7 +185,7 @@ transferencia.addEventListener('click', () => {
         ...currentUser,
         saldo: saldoActualTransf + Number(nuevaTransferencia.value)
     }
-    if(Number(currentUser.cuenta) === inNumeroCuenta.value ){
+    if(currentUser.cuenta === Number(inNumeroCuenta.value) ){
         window.localStorage.setItem('currentUser', JSON.stringify(updateCurrentUserTransf))
         msgUsuarioFinal.innerHTML = `Usted realizo una tranferencia a ${currentUser.nombre}`;
     }
